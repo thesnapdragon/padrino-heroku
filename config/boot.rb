@@ -1,10 +1,10 @@
 # Defines our constants
-RACK_ENV = ENV['RACK_ENV'] ||= 'development' unless defined?(RACK_ENV)
+ENV['RACK_ENV'] ||= 'development'
 PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
 
 # Load our dependencies
 require 'bundler/setup'
-Bundler.require(:default, RACK_ENV)
+Bundler.require(:default, ENV["RACK_ENV"])
 
 ##
 # ## Enable devel logging
@@ -52,8 +52,7 @@ Padrino.dependency_paths.unshift Padrino.root('config/initializers/*.rb')
 # These hooks are run before any dependencies are required.
 #
 Padrino.before_load do
-  require 'dotenv'
-  Dotenv.load
+  Dotenv.overload(".env.#{ENV['RACK_ENV']}") if %w(test development).include? ENV["RACK_ENV"]
 end
 
 ##

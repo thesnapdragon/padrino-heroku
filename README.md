@@ -2,39 +2,42 @@
 
 ## Setup
 
-1. Create `.env` file and set the following environment variables:
+### Development
 
-    ```
-    POSTGRES_DB=padrinodb
-    POSTGRES_USER=padrino
-    POSTGRES_PASSWORD=password
-
-    RACK_ENV=development
-    ```
-2. Install local Ruby version with *rbenv*:
+1. Install local Ruby version with *rbenv*:
 
     ```
     $ rbenv install
     ```
-
-### Development
-
-1. Install requirements:
+2. Install requirements:
 
     ```
     $ bundle install
     ```
-2. Start PostgreSQL in a Docker container:
+3. Start PostgreSQL in a Docker container:
 
     ```
     $ docker-compose create
     $ docker-compose start
     ```
-3. Run the *alembic* migrations:
+4. Run the migrations:
 
     ```
     $ rake ar:create
     $ rake ar:migrate
+    ```
+
+### Production
+
+1. Setup environment variables:
+
+    ```
+    POSTGRES_DB=padrinodb
+    POSTGRES_USER=padrino
+    POSTGRES_PASSWORD=password
+    POSTGRES_HOST=host
+
+    RACK_ENV=production
     ```
 
 ## Run

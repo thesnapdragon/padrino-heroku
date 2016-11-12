@@ -2,4 +2,3 @@ postgres:
   image: postgres
   ports:
     - 5432:5432
-  env_file: .env
