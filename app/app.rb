@@ -2,8 +2,10 @@ module PadrinoHeroku
   class App < Padrino::Application
     register SassInitializer
     use ConnectionPoolManagement
+    use Rack::IAmNotARobot, :site_key => ENV["RECAPTCHA_SITEKEY"], :secret_key => ENV["RECAPTCHA_SECRET"]
     register Padrino::Mailer
     register Padrino::Helpers
+    helpers Rack::IAmNotARobot::Helpers
     enable :sessions
 
     get :index, "/" do

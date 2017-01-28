@@ -1,0 +1,21 @@
+%h2 About
+
+.panel.panel-default
+  .panel-body
+    - if defined?(success) && success
+      .alert.alert-success{role: "alert"}
+        Success!
+    - elsif defined?(success) && !success
+      .alert.alert-danger{role: "alert"}
+        Failed!
+
+    .container-fluid
+      = form_for :post, url(:about, :send), :class => "form-horizontal" do |f|
+        .form-group
+          = f.label "Text field", class: "control-label", text: "Text field"
+          = f.text_field :text, class: "form-control", placeholder: "Text field"
+        .form-group
+          %script{:async => "", :defer => "defer", :src => "https://www.google.com/recaptcha/api.js?hl=#{I18n.locale}"}
+          .g-recaptcha{"data-sitekey" => "#{recaptcha_sitekey}"}
+        .form-group
+          = f.submit "Submit", class: "btn btn-primary"

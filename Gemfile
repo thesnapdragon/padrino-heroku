@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+source "https://gem.fury.io/crushlovely/"
 
 ruby File.read(".ruby-version").strip
 
@@ -13,6 +14,7 @@ gem "haml"
 gem "activerecord", ">= 3.1", :require => "active_record"
 gem "pg"
 gem "bcrypt"
+gem "rack-iamnotarobot", :require => "rack/iamnotarobot"
 
 group :test, :development do
   gem "dotenv"

@@ -29,7 +29,9 @@
 
 ### Production
 
-1. Setup environment variables:
+1. Create [reCAPTCHA](https://www.google.com/recaptcha/admin#list)
+
+2. Setup environment variables:
 
     ```
     POSTGRES_DB=padrinodb
@@ -38,6 +40,9 @@
     POSTGRES_HOST=host
 
     RACK_ENV=production
+
+    RECAPTCHA_SITEKEY=""
+    RECAPTCHA_SECRET=""
     ```
 
 ## Run

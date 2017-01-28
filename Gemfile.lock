@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://gem.fury.io/crushlovely/
   specs:
     activemodel (5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -24,6 +25,7 @@ GEM
     haml (4.0.7)
       tilt
     i18n (0.7.0)
+    json (2.0.2)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     mime-types (2.99.3)
@@ -72,6 +74,8 @@ GEM
     powerpack (0.1.1)
     puma (3.6.0)
     rack (1.6.4)
+    rack-iamnotarobot (0.1.3)
+      json
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -124,6 +128,7 @@ DEPENDENCIES
   padrino
   pg
   puma
+  rack-iamnotarobot
   rack-test
   rake
   rspec
