@@ -4,7 +4,7 @@
 :mock: none
 :script: jquery
 :renderer: haml
-:stylesheet: scss
+:stylesheet: sass
 :namespace: PadrinoHeroku
 :migration_format: number
 :admin_renderer: haml

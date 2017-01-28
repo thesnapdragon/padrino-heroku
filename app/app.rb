@@ -1,6 +1,6 @@
 module PadrinoHeroku
   class App < Padrino::Application
-    register ScssInitializer
+    register SassInitializer
     use ConnectionPoolManagement
     register Padrino::Mailer
     register Padrino::Helpers
