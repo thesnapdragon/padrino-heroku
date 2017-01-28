@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/sumskyi/padrino-pagination.git
+  revision: a847b0e517238d98bd606987f252bb8e5461ab68
+  specs:
+    padrino-pagination (0.0.1)
+      padrino
+
 GEM
   remote: https://rubygems.org/
   remote: https://gem.fury.io/crushlovely/
@@ -26,6 +33,10 @@ GEM
       tilt
     i18n (0.7.0)
     json (2.0.2)
+    kaminari-activerecord (1.0.1)
+      activerecord
+      kaminari-core (= 1.0.1)
+    kaminari-core (1.0.1)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     mime-types (2.99.3)
@@ -127,8 +138,11 @@ DEPENDENCIES
   dotenv
   foreman
   haml
+  kaminari-activerecord
+  kaminari-core
   padrino
   padrino-cookies
+  padrino-pagination!
   pg
   puma
   rack-iamnotarobot

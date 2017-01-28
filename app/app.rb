@@ -5,6 +5,7 @@ module PadrinoHeroku
     use Rack::IAmNotARobot, :site_key => ENV["RECAPTCHA_SITEKEY"], :secret_key => ENV["RECAPTCHA_SECRET"]
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Helpers::Pagination
     register Padrino::Cookies
     helpers Rack::IAmNotARobot::Helpers
     enable :sessions

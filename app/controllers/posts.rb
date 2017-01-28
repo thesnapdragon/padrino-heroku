@@ -1,5 +1,5 @@
 PadrinoHeroku::App.controllers :posts do
-  
+
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
   #   render 'index'
@@ -18,9 +18,9 @@ PadrinoHeroku::App.controllers :posts do
   # get '/example' do
   #   'Hello world!'
   # end
-  
+
   get :index do
-    @posts = Post.order('created_at DESC').all
+    @posts = Post.order('created_at DESC').page(params[:page])
     render 'posts/index'
   end
 

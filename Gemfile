@@ -4,6 +4,9 @@ source "https://gem.fury.io/crushlovely/"
 ruby File.read(".ruby-version").strip
 
 gem "padrino"
+gem "kaminari-core"
+gem "kaminari-activerecord"
+gem "padrino-pagination", git: "https://github.com/sumskyi/padrino-pagination.git"
 gem "padrino-cookies"
 
 gem "rake"
