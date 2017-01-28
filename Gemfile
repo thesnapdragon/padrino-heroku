@@ -4,6 +4,7 @@ source "https://gem.fury.io/crushlovely/"
 ruby File.read(".ruby-version").strip
 
 gem "padrino"
+gem "padrino-cookies"
 
 gem "rake"
 gem "foreman"

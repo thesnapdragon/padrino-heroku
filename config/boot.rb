@@ -25,7 +25,7 @@ Padrino::Logger::Config[:production][:colorize_logging] = false
 #
 # ## Configure your I18n
 #
-# I18n.default_locale = :en
+I18n.default_locale = :en
 # I18n.enforce_available_locales = false
 #
 # ## Configure your HTML5 data helpers

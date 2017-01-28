@@ -5,8 +5,14 @@ module PadrinoHeroku
     use Rack::IAmNotARobot, :site_key => ENV["RECAPTCHA_SITEKEY"], :secret_key => ENV["RECAPTCHA_SECRET"]
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Cookies
     helpers Rack::IAmNotARobot::Helpers
     enable :sessions
+
+    before do
+      cookies[:locale] = params[:locale] || cookies[:locale] || I18n.locale
+      I18n.locale = cookies[:locale]
+    end
 
     get :index, "/" do
       render :haml, "%p This is a sample blog created to demonstrate how Padrino works!"
