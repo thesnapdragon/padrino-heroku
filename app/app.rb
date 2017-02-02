@@ -13,6 +13,8 @@ module PadrinoHeroku
     before do
       cookies[:locale] = params[:locale] || cookies[:locale] || I18n.locale
       I18n.locale = cookies[:locale]
+
+      cache_control :public, :must_revalidate, :max_age => 600
     end
 
     get :index, "/" do

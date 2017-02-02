@@ -12,6 +12,7 @@ gem "padrino-cookies"
 gem "rake"
 gem "foreman"
 gem "puma"
+gem "rack-cache"
 
 gem "sass"
 gem "haml"

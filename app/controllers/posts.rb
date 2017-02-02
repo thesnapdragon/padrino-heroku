@@ -21,11 +21,19 @@ PadrinoHeroku::App.controllers :posts do
 
   get :index do
     @posts = Post.order('created_at DESC').page(params[:page])
+
+    last_modified @posts.first.updated_at
+    etag @posts.first.sha1
+
     render 'posts/index'
   end
 
   get :show, :with => :id do
     @post = Post.find_by_id(params[:id])
+
+    last_modified @post.updated_at
+    etag @post.sha1
+
     render 'posts/show'
   end
 

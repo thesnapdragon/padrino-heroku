@@ -7,4 +7,5 @@
 require File.expand_path("../config/boot.rb", __FILE__)
 
 use Rack::Deflater
+use Rack::Cache, verbose: true
 run Padrino.application
